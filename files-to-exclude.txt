@@ -1,0 +1,47 @@
+================================================================================
+FILES AND DIRECTORIES TO EXCLUDE FROM GITHUB REPOSITORY
+================================================================================
+Project: Automotive Dual-Clutch Transmission (DCT) Concentric Shafts Fatigue Design
+Target Platform: Git / GitHub Version Control
+
+This document enumerates large 3D CAD models, finite element analysis results,
+temporary binary caches, and institutional course documents that should be
+omitted from git commits.
+
+--------------------------------------------------------------------------------
+1. 3D CAD & SOLIDWORKS ASSEMBLY ARTIFACTS
+--------------------------------------------------------------------------------
+* *.SLDPRT, *.SLDASM, *.SLDDRW (SolidWorks Part, Assembly & Drawing Files):
+  - Explanation: Proprietary parametric solid geometry models. Complete 2D
+    manufacturing dimensions and tolerances are provided as lightweight
+    vector/raster drawings in docs/images/.
+
+* *.STEP, *.STP, *.IGES, *.IGS (Neutral 3D CAD Neutral Exports):
+  - Explanation: Large volumetric geometry dumps (often 50–200 MB for assemblies).
+    Can be shared via specialized CAD repositories (GrabCAD) rather than Git.
+
+* ~$*.sld* (SolidWorks Lock & Backup Files):
+  - Explanation: Temporary hidden lock files generated during active CAD sessions.
+
+--------------------------------------------------------------------------------
+2. FINITE ELEMENT & MATLAB NUMERICAL CACHE
+--------------------------------------------------------------------------------
+* *.mat (MATLAB Workspace Dumps):
+  - Explanation: Binary data files. The provided .m and .py scripts recompute
+    all fatigue equations and reaction loads instantaneously.
+
+* *.fig (MATLAB Figure Binaries):
+  - Explanation: Proprietary binary plot figures. Replaced by universal PNGs in
+    docs/images/.
+
+--------------------------------------------------------------------------------
+3. LOCAL SCRATCH & PRE-PUBLICATION AUDIT FILES
+--------------------------------------------------------------------------------
+* sensitive-data-review.txt:
+  - Explanation: Private pre-publication safety checklist containing author student
+    identification numbers and institutional course data. Must remain local.
+
+* Raw Course PDF Reports (*.pdf):
+  - Explanation: Course submission reports containing student identification
+    numbers and grading evaluation sheets.
+================================================================================
